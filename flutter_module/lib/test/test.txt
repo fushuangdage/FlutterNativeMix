@@ -1,0 +1,97 @@
+main = test::main;
+//
+// Problems in component:
+//
+// test.dart: Warning: Interpreting this as package URI, 'package:flutter_module/test/test.dart'.
+//
+library from "package:flutter_module/test/test.dart" as test {
+
+  abstract class _TestClass&Object&Manager extends core::Object implements test::Manager /*isAnonymousMixin,isEliminatedMixin,hasConstConstructor*/  {
+    const synthetic constructor •() → test::_TestClass&Object&Manager*
+      : super core2::Object::•()
+      ;
+    method run() → void {
+      core2::print("call run");
+    }
+    abstract member-signature get _identityHashCode() → core2::int*; -> core2::Object::_identityHashCode
+    abstract member-signature method _instanceOf(dynamic instantiatorTypeArguments, dynamic functionTypeArguments, dynamic type) → core2::bool*; -> core2::Object::_instanceOf
+    abstract member-signature method _simpleInstanceOf(dynamic type) → core2::bool*; -> core2::Object::_simpleInstanceOf
+    abstract member-signature method _simpleInstanceOfTrue(dynamic type) → core2::bool*; -> core2::Object::_simpleInstanceOfTrue
+    abstract member-signature method _simpleInstanceOfFalse(dynamic type) → core2::bool*; -> core2::Object::_simpleInstanceOfFalse
+    abstract member-signature operator ==(dynamic other) → core2::bool*; -> core2::Object::==
+    abstract member-signature get hashCode() → core2::int*; -> core2::Object::hashCode
+    abstract member-signature method toString() → core2::String*; -> core2::Object::toString
+    abstract member-signature method noSuchMethod(core2::Invocation* invocation) → dynamic; -> core2::Object::noSuchMethod
+    abstract member-signature get runtimeType() → core2::Type*; -> core2::Object::runtimeType
+  }
+  abstract class _TestClass&Object&Manager&Manager1 extends test::_TestClass&Object&Manager implements test::Manager1 /*isAnonymousMixin,isEliminatedMixin,hasConstConstructor*/  {
+    const synthetic constructor •() → test::_TestClass&Object&Manager&Manager1*
+      : super test::_TestClass&Object&Manager::•()
+      ;
+    method run() → void {
+      core2::print("call run");
+    }
+    abstract member-signature get _identityHashCode() → core2::int*; -> core2::Object::_identityHashCode
+    abstract member-signature method _instanceOf(dynamic instantiatorTypeArguments, dynamic functionTypeArguments, dynamic type) → core2::bool*; -> core2::Object::_instanceOf
+    abstract member-signature method _simpleInstanceOf(dynamic type) → core2::bool*; -> core2::Object::_simpleInstanceOf
+    abstract member-signature method _simpleInstanceOfTrue(dynamic type) → core2::bool*; -> core2::Object::_simpleInstanceOfTrue
+    abstract member-signature method _simpleInstanceOfFalse(dynamic type) → core2::bool*; -> core2::Object::_simpleInstanceOfFalse
+    abstract member-signature operator ==(dynamic other) → core2::bool*; -> core2::Object::==
+    abstract member-signature get hashCode() → core2::int*; -> core2::Object::hashCode
+    abstract member-signature method toString() → core2::String*; -> core2::Object::toString
+    abstract member-signature method noSuchMethod(core2::Invocation* invocation) → dynamic; -> core2::Object::noSuchMethod
+    abstract member-signature get runtimeType() → core2::Type*; -> core2::Object::runtimeType
+  }
+  class TestClass extends test::_TestClass&Object&Manager&Manager1 {
+    synthetic constructor •() → test::TestClass*
+      : super test::_TestClass&Object&Manager&Manager1::•()
+      ;
+    method say() → void {
+      core2::print("call say");
+      this.{test::_TestClass&Object&Manager&Manager1::run}();
+    }
+  }
+  abstract class Manager extends core2::Object /*isMixinDeclaration*/  {
+    method run() → void {
+      core2::print("call run");
+    }
+    abstract member-signature get _identityHashCode() → core2::int*; -> core2::Object::_identityHashCode
+    abstract member-signature method _instanceOf(dynamic instantiatorTypeArguments, dynamic functionTypeArguments, dynamic type) → core2::bool*; -> core2::Object::_instanceOf
+    abstract member-signature method _simpleInstanceOf(dynamic type) → core2::bool*; -> core2::Object::_simpleInstanceOf
+    abstract member-signature method _simpleInstanceOfTrue(dynamic type) → core2::bool*; -> core2::Object::_simpleInstanceOfTrue
+    abstract member-signature method _simpleInstanceOfFalse(dynamic type) → core2::bool*; -> core2::Object::_simpleInstanceOfFalse
+    abstract member-signature operator ==(dynamic other) → core2::bool*; -> core2::Object::==
+    abstract member-signature get hashCode() → core2::int*; -> core2::Object::hashCode
+    abstract member-signature method toString() → core2::String*; -> core2::Object::toString
+    abstract member-signature method noSuchMethod(core2::Invocation* invocation) → dynamic; -> core2::Object::noSuchMethod
+    abstract member-signature get runtimeType() → core2::Type*; -> core2::Object::runtimeType
+  }
+  abstract class Manager1 extends core2::Object /*isMixinDeclaration*/  {
+    method run() → void {
+      core2::print("call run");
+    }
+    abstract member-signature get _identityHashCode() → core2::int*; -> core2::Object::_identityHashCode
+    abstract member-signature method _instanceOf(dynamic instantiatorTypeArguments, dynamic functionTypeArguments, dynamic type) → core2::bool*; -> core2::Object::_instanceOf
+    abstract member-signature method _simpleInstanceOf(dynamic type) → core2::bool*; -> core2::Object::_simpleInstanceOf
+    abstract member-signature method _simpleInstanceOfTrue(dynamic type) → core2::bool*; -> core2::Object::_simpleInstanceOfTrue
+    abstract member-signature method _simpleInstanceOfFalse(dynamic type) → core2::bool*; -> core2::Object::_simpleInstanceOfFalse
+    abstract member-signature operator ==(dynamic other) → core2::bool*; -> core2::Object::==
+    abstract member-signature get hashCode() → core2::int*; -> core2::Object::hashCode
+    abstract member-signature method toString() → core2::String*; -> core2::Object::toString
+    abstract member-signature method noSuchMethod(core2::Invocation* invocation) → dynamic; -> core2::Object::noSuchMethod
+    abstract member-signature get runtimeType() → core2::Type*; -> core2::Object::runtimeType
+  }
+  extension _extension#0 on test::TestClass* {
+    method show = test::_extension#0|show;
+    tearoff show = test::_extension#0|get#show;
+  }
+  static method main() → void {
+    new test::TestClass::•().{test::TestClass::say}();
+    test::_extension#0|show(new test::TestClass::•());
+  }
+  static method _extension#0|show(lowered final test::TestClass* #this) → void {
+    core2::print("call show");
+  }
+  static method _extension#0|get#show(lowered final test::TestClass* #this) → () →* void
+    return () → void => test::_extension#0|show(#this);
+}
