@@ -31,13 +31,13 @@ dependencies:
   cupertino_icons: ^1.0.5
 
 dev_dependencies:
-  source_gen: ^1.0.3
+  source_gen:
 
   flutter_test:
     sdk: flutter
-  json_serializable: ^4.1.4
+  json_serializable: ^6.1.4
   build_runner: ^2.1.2
-  analyzer: ^1.7.1
+  analyzer: ^4.6.0
 
 
 # For information on the generic Dart part of this file, see the

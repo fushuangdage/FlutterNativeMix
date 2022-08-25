@@ -1,0 +1,7 @@
+builders:
+  testMyBuilder:
+    import: "package:flutter_module/annotation/generator.dart"
+    builder_factories: ["testBuilder"]
+    build_extensions: {".dart": [".info.dart"]}
+    auto_apply: root_package
+    build_to: source

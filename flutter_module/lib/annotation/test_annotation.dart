@@ -3,9 +3,16 @@ class FastClick {
   const FastClick(this.time);
 }
 
-@FastClick(100)
-class TestModel {
+class AutoChannel {
+  final int nativeType;
+  const AutoChannel(this.nativeType);
+}
+
+@AutoChannel(1)class TestModel {
   var foo = const [];
   var test = FastClick(1);
+  bool showToast(String content,int duration){
+    return true;
+  }
 
 }
