@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_module/nestScrollView/cus_customer_scrollview_test_page.dart';
 import 'package:flutter_module/nestScrollView/future_test_page.dart';
 import 'package:flutter_module/test/async/future_test_page.dart';
 import 'package:flutter_module/test/channel/channel_page.dart';
 import 'package:flutter_module/test/provider/provider_test_page.dart';
 import 'package:flutter_module/test/regexp/regexp_test_page.dart';
+import 'package:flutter_module/test/scrollview/scroll_test_page.dart';
 import 'package:flutter_module/test/tap/tap_test_page.dart';
 import 'package:flutter_module/test/touchDispatch/future_touch_dispatch_page.dart';
 import 'package:flutter_module/test/widget/future_test_widget_page.dart';
@@ -173,6 +175,35 @@ class _MyHomePageStatus extends State<MyHomePage> {
           onTap: () {
             Navigator.push(context, MaterialPageRoute(builder: (context) {
               return ChannelPage();
+            }));
+          },
+        ),
+        GestureDetector(
+          child: SizedBox(
+            height: 100,
+            width: 100,
+            child: Center(
+              child: Text("scrollTest"),
+            ),
+          ),
+          onTap: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return ScrollTestPage();
+            }));
+          },
+        ),
+        GestureDetector(
+          child: SizedBox(
+            height: 100,
+            width: 100,
+            child: Center(
+              child: Text("CusScrollTest"),
+            ),
+          ),
+          onTap: () {
+            print('');
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return CusCustomScrollTestPage();
             }));
           },
         ),

@@ -6,6 +6,7 @@ import android.widget.Toast
 import io.flutter.embedding.android.FlutterActivity;
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
+import io.flutter.plugin.common.MethodCodec
 import io.flutter.plugins.GeneratedPluginRegistrant;
 
 class FirstFlutterActivity : FlutterActivity() {

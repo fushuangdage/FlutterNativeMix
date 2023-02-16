@@ -8,7 +8,8 @@ class AutoChannel {
   const AutoChannel(this.nativeType);
 }
 
-@AutoChannel(1)class TestModel {
+@AutoChannel(1)
+class TestModel {
   var foo = const [];
   var test = FastClick(1);
   bool showToast(String content,int duration){

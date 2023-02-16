@@ -1,6 +1,5 @@
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 class CustomerStatefulWidget extends StatefulWidget {
   CustomerStatefulWidget({Key? key}) : super(key: key);
@@ -18,37 +17,8 @@ class _CustomerStatefulWidgetState extends State<CustomerStatefulWidget> {
   }
 }
 
-class CustomerStatelessWidget extends StatefulWidget {
+class CustomerStatelessWidget extends StatelessWidget {
   CustomerStatelessWidget();
-
-  @override
-  _CustomerStatelessWidgetState createState() => _CustomerStatelessWidgetState();
-}
-
-class _CustomerStatelessWidgetState extends State<CustomerStatelessWidget> {
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    super.dispose();
-  }
-
-  @override
-  void didChangeDependencies() {
-    // TODO: implement didChangeDependencies
-    super.didChangeDependencies();
-  }
-
-  @override
-  void didUpdateWidget(covariant CustomerStatelessWidget oldWidget) {
-    // TODO: implement didUpdateWidget
-    super.didUpdateWidget(oldWidget);
-  }
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -82,13 +52,6 @@ class CustomerRenderElement extends RenderObjectElement {
     super.insertRenderObjectChild(child, slot);
     print('CustomerRenderElement.insertRenderObjectChild');
   }
-
-  // @override
-  // List<Element> updateChildren(List<Element> oldChildren, List<Widget> newWidgets,
-  //     {Set<Element> forgottenChildren}) {
-  //   super.updateChildren(oldChildren, newWidgets);
-  //   print('CustomerRenderElement.updateChildren'android/app/build.gradle);
-  // }
 
   @override
   void update(RenderObjectWidget newWidget) {
@@ -126,7 +89,7 @@ class CustomerRenderObject extends RenderBox {
 
   @override
   void performLayout() {
-    size = Size(100, 100);
+    size = Size(300, 300);
   }
 
   @override
@@ -151,5 +114,25 @@ class CustomerRenderObject extends RenderBox {
   double computeMinIntrinsicWidth(double height) {
     print('CustomerRenderObject.computeMinIntrinsicWidth');
     return 100;
+  }
+}
+
+class CustomerSingChildWidget extends SingleChildRenderObjectWidget {
+  @override
+  RenderObject createRenderObject(BuildContext context) {
+    return CustomerSingChildRenderObject();
+  }
+}
+
+class CustomerSingChildRenderObject extends RenderBox with RenderObjectWithChildMixin<RenderBox> {
+  @override
+  void performLayout() {
+    // TODO: implement performLayout
+    super.performLayout();
+
+    child?.layout(constraints.loosen(), parentUsesSize: false);
+    size = Size(300, 300);
+    BoxParentData? parentData = child?.parentData as BoxParentData?;
+    parentData?.offset = ((size - child!.size) as Offset) / 2;
   }
 }

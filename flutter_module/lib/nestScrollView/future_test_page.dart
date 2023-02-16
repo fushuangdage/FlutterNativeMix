@@ -3,11 +3,9 @@ import 'package:flutter/material.dart';
 class NestScrollTestPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var list1 = ["a", "b", "c"];
 
-
-    var list1=["a","b","c"];
-
-    var list2=List.from(list1);
+    var list2 = List.from(list1);
 
     list1.add("d");
 
@@ -31,7 +29,7 @@ class NestScrollTestPage extends StatelessWidget {
                 preferredSize: Size.fromHeight(100),
                 child: Container(
                   color: Colors.blueAccent,
-                  child:  Column(
+                  child: Column(
                     children: <Widget>[Text("data"), Text("data1"), Text("data2")],
                   ),
                 ),
