@@ -1,18 +1,16 @@
-.DS_Store
-.dart_tool/
-
-.packages
-.pub/
-
 .idea/
 .vagrant/
 .sconsign.dblite
 .svn/
 
+.DS_Store
 *.swp
 profile
 
 DerivedData/
+build/
+GeneratedPluginRegistrant.h
+GeneratedPluginRegistrant.m
 
 .generated/
 
@@ -35,16 +33,6 @@ xcuserdata
 Icon?
 .tags*
 
-build/
-.android/
-.ios/
-.flutter-plugins
-.flutter-plugins-dependencies
-
-# Symbolication related
-app.*.symbols
-
-# Obfuscation related
-app.*.map.json
-
-.flutterw/cache/
+/Flutter/Generated.xcconfig
+/Flutter/ephemeral/
+/Flutter/flutter_export_environment.sh
