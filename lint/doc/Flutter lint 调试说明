@@ -1,0 +1,3 @@
+运行main.dart 检查lint_check.dart 文件 可以输出AST语法树
+配置运行入口  lint/main.dart
+添加运行参数  -f /Users/bytedance/AndroidStudioProjects/FlutterProject/FlutterAwesome/lint/lint_check.dart
