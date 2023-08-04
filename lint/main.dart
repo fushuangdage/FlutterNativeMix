@@ -32,6 +32,18 @@ class DemoAstVisitor extends GeneralizingAstVisitor<Map> {
     stdout.write("visitMethodInvocation : ${node.runtimeType} ======== ${node.toSource()}");
     return super.visitMethodInvocation(node);
   }
+
+  @override
+  Map visitMethodDeclaration(MethodDeclaration node) {
+    stdout.write("visitMethodInvocation : ${node.runtimeType} ======== ${node.toSource()}");
+    return super.visitMethodDeclaration(node);
+  }
+
+  @override
+  Map visitAssignmentExpression(AssignmentExpression node) {
+    stdout.write("visitAssignmentExpression : ${node.runtimeType} ======== ${node.toSource()}");
+    return super.visitAssignmentExpression(node);
+  }
 }
 
 //生成AST
