@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_module/flutterPluginEntrance/flutter_plugin_entrance_page.dart';
 import 'package:flutter_module/nestScrollView/cus_customer_scrollview_test_page.dart';
 import 'package:flutter_module/nestScrollView/future_test_page.dart';
 import 'package:flutter_module/test/async/future_test_page.dart';
@@ -204,6 +205,21 @@ class _MyHomePageStatus extends State<MyHomePage> {
             print('');
             Navigator.push(context, MaterialPageRoute(builder: (context) {
               return CusCustomScrollTestPage();
+            }));
+          },
+        ),
+        GestureDetector(
+          child: SizedBox(
+            height: 100,
+            width: 100,
+            child: Center(
+              child: Text("FlutterPlugin"),
+            ),
+          ),
+          onTap: () {
+            print('');
+            Navigator.push(context, MaterialPageRoute(builder: (context) {
+              return FlutterPluginEntrancePage();
             }));
           },
         ),

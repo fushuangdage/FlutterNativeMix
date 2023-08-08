@@ -42,18 +42,6 @@ class CustomerRenderElement extends RenderObjectElement {
   CustomerRenderElement(RenderObjectWidget widget) : super(widget);
 
   @override
-  void removeRenderObjectChild(RenderObject child, dynamic slot) {
-    super.removeRenderObjectChild(child, slot);
-    print('CustomerRenderElement.removeRenderObjectChild');
-  }
-
-  @override
-  void insertRenderObjectChild(RenderObject child, dynamic slot) {
-    super.insertRenderObjectChild(child, slot);
-    print('CustomerRenderElement.insertRenderObjectChild');
-  }
-
-  @override
   void update(RenderObjectWidget newWidget) {
     super.update(newWidget);
     print('CustomerRenderElement.update');
@@ -69,6 +57,22 @@ class CustomerRenderElement extends RenderObjectElement {
   void unmount() {
     super.unmount();
     print('CustomerRenderElement.mount');
+  }
+
+  @override
+  void moveRenderObjectChild(
+      covariant RenderObject child, covariant Object oldSlot, covariant Object newSlot) {
+    print('CustomerRenderElement.moveRenderObjectChild');
+  }
+
+  @override
+  void insertRenderObjectChild(covariant RenderObject child, covariant Object slot) {
+    print('CustomerRenderElement.insertRenderObjectChild');
+  }
+
+  @override
+  void removeRenderObjectChild(covariant RenderObject child, covariant Object slot) {
+    print('CustomerRenderElement.removeRenderObjectChild');
   }
 }
 

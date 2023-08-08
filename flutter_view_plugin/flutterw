@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+
+VERSION=0.2.1
+
+#set -e
+
+FLUTTER_APP_HOME="$(pwd -P)"
+FLUTTERW_CACHE_DIR="$FLUTTER_APP_HOME/.flutterw/cache/wrapper"
+
+function addToGitignore() {
+  if [[ -e "${FLUTTER_APP_HOME}/.gitignore" && $(grep -c ".flutterw/cache/" "${FLUTTER_APP_HOME}"/.gitignore) -eq '0' ]]; then
+    echo "" >> "${FLUTTER_APP_HOME}"/.gitignore
+    echo ".flutterw/cache/" >>"${FLUTTER_APP_HOME}"/.gitignore
+  fi
+}
+
+function toMd5() {
+  if builtin command -v md5 >/dev/null; then
+    echo "$1" | md5
+  elif builtin command -v md5sum >/dev/null; then
+    echo "$1" | md5sum | awk '{print $1}'
+  else
+    echo "Neither md5 nor md5sum were found in the PATH"
+    return 0
+  fi
+  return 1
+}
+
+#NOW=`date '+%Y-%m-%d'`
+
+## Flutterw-Dev-Mode
+#NOW=$(date '+%Y-%m-%d(%H:%M:%s)')
+
+FLUTTERW_CACHE_FILE="${FLUTTERW_CACHE_DIR}/flutter"
+
+if [[ ! -e ${FLUTTERW_CACHE_FILE} ]]; then
+  rm -rf "${FLUTTERW_CACHE_DIR}"
+  addToGitignore
+#  curl -s --create-dirs -H "Cache-Control: no-cache" "file:///${FLUTTER_APP_HOME}/wrapper/flutter-wrapper" -o "${FLUTTERW_CACHE_FILE}"
+  # flutter-wrapper: 轻服务文件服务 https://inspirecloud.bytedance.net/dashboard/ttmkcj/contents?table=_file&page=1
+  curl -s --create-dirs -H "Cache-Control: no-cache" "https://sf-hs-sg.ibytedtos.com/obj/developer-baas-sg/baas/ttmkcj/38e6182d98705cf5_1631675664625" -o "${FLUTTERW_CACHE_FILE}"
+  if [ $? -ne 0 ]; then
+    echo "拉取失败 重新拉取"
+    curl -s --create-dirs -H "Cache-Control: no-cache" "http://tosv.byted.org/obj/ttclient-android/flutter-wrapper" -o "${FLUTTERW_CACHE_FILE}"
+    if [ $? -ne 0 ]; then
+     echo "拉取依然失败 建议查看网络是否连接后重试"
+    fi
+  fi
+fi
+bash --login "${FLUTTERW_CACHE_FILE}" "$@"
